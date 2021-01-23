@@ -1,0 +1,70 @@
+@import './colors.scss';
+#us {
+    padding: 20px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap: 1em;
+    .content-img {
+        display: grid;
+        place-items: center;
+        opacity: 0;
+        img {
+            width: 60%;
+        }
+    }
+    .who-whe-are, .what-we-do {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1em;
+        .content {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            h3 {
+                width: 100%;
+                font-size: 1.5em;
+                margin-bottom: 1.5em;
+                color: $perseoBlack;
+            }
+            p {
+                width: 70%;
+                color: $perseoBlackSecondary;
+            }
+        }
+    }
+    .what-we-do {
+        .content {
+            background-color: $primary;
+            animation: moveY 1s infinite alternate;
+            opacity: 0;
+            h3, p {
+                color: $perseoWhite;
+            }
+            box-shadow: 0px 10px 15px #00bfa662
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    #us {
+        .who-whe-are, .what-we-do {
+            grid-template-columns: 1fr !important;
+        }
+        .content-img {
+            display: none;
+        }
+    }
+}
+
+@keyframes moveY {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}

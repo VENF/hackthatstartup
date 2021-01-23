@@ -1,0 +1,77 @@
+@import './colors.scss';
+#home {
+    height: 90vh;
+    display: grid;
+    grid-template-rows: 1.5fr .2fr;
+    .content-principal {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            font-size: 2.5em;
+            width: 70%;
+            text-align: center;
+            margin: 45px 0px;
+            color: $perseoBlack;
+            opacity: 0;
+        }
+        h4 {
+            font-weight: 400;
+            width: 50%;
+            text-align: center;
+            color: $perseoBlackSecondary;
+            opacity: 0;
+        }
+    }
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        .social {
+            a {
+                margin: 0px 15px;
+                display: inline-block;
+                transition: all ease .3s;
+                opacity: 0;
+                &:hover {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+        .news {
+            a {
+                opacity: 0;
+                color: $perseoBlack;
+                transition: all ease .3s;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #home {
+        .content-principal {
+            h1 {
+                width: 100%;
+                font-size: 1.5em;
+                padding: 0px 20px;
+            }
+            h4 {
+                width: 100%;
+                padding: 0px 20px;
+            }
+        }
+        section {
+            .social {
+                a {
+                    margin: 0px 5px;
+                }
+            }
+        }
+    }
+}

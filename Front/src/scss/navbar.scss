@@ -1,0 +1,84 @@
+@import './colors.scss';
+nav {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    button {
+        display: none;
+    }
+    .logo { 
+        font-size: 1.5em;
+        font-weight: 800;
+        color: $primary;
+    }
+    ul {
+        display: flex;
+        li {
+            margin: 0px 15px;
+            a {
+                color: $perseoBlack;
+                transition: all ease .2s;
+                font-weight: 400;
+                font-size: 1em;
+            }
+        }
+    }
+}
+@media (max-width: 600px){
+    nav {
+        .side-menu-btn {
+            display: grid;
+            place-items: center;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .close-menu-btn {
+            display: grid;
+            place-items: center;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        ul {
+            position: absolute;
+            top: 0px;
+            left: -300px;
+            flex-flow: column;
+            height: 100%;
+            width: 50%;
+            padding: 50px 0px;
+            display: grid;
+            place-items: center;
+            background: $perseoWhite;
+            z-index: 1000;
+            transition: all ease .3s;
+        }
+    }
+}
+.nav-open {
+    position: absolute;
+    left: 0px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.486);
+    }
+}
+.side-menu-btn-off {
+    display: none;
+}
+.active {
+    font-weight: 800;
+    color: $primary;
+    font-size: 1.1em;
+}

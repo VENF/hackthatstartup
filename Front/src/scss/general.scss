@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../static/MontserratRegular.ttf');
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color:#FFF;
+    font-family: 'Montserrat';
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    list-style-type: none;
+}
